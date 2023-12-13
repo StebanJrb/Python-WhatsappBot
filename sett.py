@@ -1,0 +1,5 @@
+token = 'VerticeUniversalBot'
+
+whatsapp_token = 'EAAOraKGBh5YBO8vosSkc853JBdBNJ8B5AQaYrbAWyInpr75XZC5tOfb4tViDNm08gIMn6XQq6QpV9FriqXKZBxjW8wwfN3ZBn8JZCrldViqUSXDj6QB8VZBBfXggttIzkksOTvfXKpHTfu2SB6j1ZC4LKlupime66O2d1LJnOJuq33TdgShP8ZCjWmi8kapSixYRGb9qB6fHn0WUPkj'
+
+whatsapp_url = 'https://graph.facebook.com/v17.0/105852185547693/messages'
