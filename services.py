@@ -3,14 +3,21 @@ import sett
 import json
 
 def get_whatsapp_message(message):
-    if 'type' not in message:
-        text = '..:: Unrecognized message'
-
+    if 'type' not in message :
+        text = 'mensaje no reconocido'
+        return text
     typeMessage = message['type']
+    
     if typeMessage == 'text':
         text = message['text']['body']
-
-    return text 
+    elif typeMessage == 'button':
+        text = message['button']['text']
+    elif typeMessage == 'interactive' and message['interactive']['type'] == 'list_reply':
+        text = message['interactive']['list_reply']['title']
+    elif typeMessage == 'interactive' and message['interactive']['type'] == 'button_reply':
+        text = message['interactive']['button_reply']['title']
+    else:
+        text = 'mensaje no procesado'
 
 def send_whatsapp_message(data):
     try:
@@ -524,8 +531,10 @@ Si en el futuro deseas recibir más información o asesoría personalizada, por 
 '''
         
         replyTextData = text_Message(number, bodyMessage)
-        
         list.append(replyTextData)
+    else :
+        data = text_Message(number,"Lo siento, no entendí lo que dijiste. escribe hola para volver a empezar")
+        list.append(data)
 
     for item in list:
         send_whatsapp_message(item)    
