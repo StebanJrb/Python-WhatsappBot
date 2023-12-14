@@ -219,7 +219,7 @@ def chat_administrator(text, number, messageId, name):
         list.append(replyReaction)
         list.append(replyListData)
     
-    if "visa estudiante" in text:
+    elif "visa estudiante" in text:
         body = "Escoge tu proximo pais de destino como estudiante y conoce sus requisitos basicos"
         footer = "Equipo VerticeUniversal"
         options = ["Estudiante USA","Estudiante CANADA","Estudiante AUSTRALIA, Estudiante MALTA"]
@@ -227,7 +227,7 @@ def chat_administrator(text, number, messageId, name):
         replyListData = listReply_Message(number, options, body, footer, "sed1", messageId)
         list.append(replyListData)
     
-    if "visa turista" in text:
+    elif "visa turista" in text:
         body = "Escoge tu próximo país de destino como turista y conoce sus requisitos básicos"
         footer = "Equipo VerticeUniversal"
         options = ["Turista USA","Turista CANADA","Turista AUSTRALIA"]
@@ -235,7 +235,7 @@ def chat_administrator(text, number, messageId, name):
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed1", messageId)
         list.append(replyButtonData)
     
-    if "renovacion visa usa" in text:
+    elif "renovacion visa usa" in text:
         bodyMessage = '''Si deseas renovar tu VISA a los Estados Unidos. 🇺🇸
 🔸Debes contar con un pasaporte que tenga una vigencia superior a 6 meses. 🪪
 🔸Si tu VISA ya venció, podrás renovarla siempre que no haya superado un periodo de 48 meses.🗓️
@@ -258,7 +258,7 @@ Los costos generales son los siguientes en Moneda USD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "extension estadia usa" in text:
+    elif "extension estadia usa" in text:
         bodyMessage ='''Deseas Extender tu Estadía en 🇺🇸
 🔸Para poder extender tu estadía en USA, lo más importante es que no hayas superado el tiempo máximo que se te permitió al ingreso.
 🔸Debes contar con un pasaporte que tenga una vigencia superior a 6 meses.
@@ -291,7 +291,7 @@ Los costos generales son los siguientes en Moneda USD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "reagendar cita usa 2024" in text:
+    elif "reagendar cita usa 2024" in text:
         bodyMessage = '''Deseas REAGENDAR🤩 TU VISA A USA 🇺🇸
 🔸Esta solicitud tiene un costo de 300 COP.
 🔸Solamente es reagendable solicitudes individuales👤.
@@ -309,7 +309,7 @@ Los costos generales son los siguientes en Moneda USD:
         
         list.append(replyTextData)
         list.append(replyButtonData)
-    if "estudiante usa" in text:
+    elif "estudiante usa" in text:
         bodyMessage = '''VISA DE ESTUDIANTE 👨🏼‍🎓
 USA 🇺🇸
 Para solicitar tu VISA hacia USA necesitas:
@@ -341,7 +341,7 @@ Los costos generales son los siguientes en Moneda USD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "estudiante canada" in text:
+    elif "estudiante canada" in text:
         bodyMessage = '''VISA DE ESTUDIANTE 👨🏼‍🎓
 CANADA 🇨🇦
 Para solicitar tu VISA hacia CANADA necesitas:
@@ -374,7 +374,7 @@ Los costos generales son los siguientes en Moneda CAD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "estudiante australia" in text:
+    elif "estudiante australia" in text:
         bodyMessage = '''VISA DE ESTUDIANTE👨🏼‍🎓
 AUSTRALIA🇦🇺
 Para solicitar tu VISA hacia AUSTRALIA necesitas:
@@ -407,7 +407,7 @@ Los costos generales son los siguientes en Moneda AUD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "turista usa" in text:
+    elif "turista usa" in text:
         bodyMessage = '''VISA DE TURISTA😎
 USA 🇺🇸
 Para solicitar tu VISA TURISTA A USA necesitas:
@@ -435,7 +435,7 @@ Los costos generales son los siguientes en Moneda USD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "turista canada" in text:
+    elif "turista canada" in text:
         bodyMessage = '''VISA DE TURISTA😎
 CANADA 🇨🇦
 Para solicitar tu VISA A CANADA necesitas:
@@ -465,7 +465,7 @@ Los costos generales son los siguientes en Moneda CAD:
         list.append(replyTextData)
         list.append(replyButtonData)
 
-    if "turista australia" in text:
+    elif "turista australia" in text:
         bodyMessage = '''VISA DE TURISTA😎
 AUSTRALIA🇦🇺 🇦
 Para solicitar tu VISA A AUSTRALIA necesitas:
@@ -496,7 +496,7 @@ Los costos generales son los siguientes en Moneda AUD:
         list.append(replyTextData)
         list.append(replyButtonData)
     
-    if "si" in text:
+    elif "si" in text:
         bodyMessage = '''Para nosotros es un placer atenderte, por favor déjanos la siguiente información para poder ayudarte con tu solicitud de VISA:
 Nombre👤:
 Correo Electrónico📧:
@@ -511,7 +511,7 @@ Gracias por elegir Vertice Universal.🌐 ¡Esperamos poder ayudarte a cumplir t
         
         list.append(replyTextData)
     
-    if "no" in text:
+    elif "no" in text:
         bodyMessage = '''Gracias por contactar con Vertice Universal. 🌐
 Nos especializamos en brindar servicios de asesoría y acompañamiento para obtener distintos tipos de VISAS a varios destinos internacionales.
 Si en el momento no te encuentras interesado en ninguna de las opciones anteriores, no te preocupes, estamos aquí para ayudarte en futuras oportunidades.
