@@ -4,11 +4,11 @@ import services
 
 app = Flask(__name__)
 
-@app.route('/Welcome', methods={'GET'})
+@app.route('/Welcome', methods=['GET'])
 def Welcome():
     return 'Vertice Universal Bot on Flask'
 
-@app.route('/webhook', methods={'GET'})
+@app.route('/webhook', methods=['GET'])
 def verify_token():
     try:
         token = request.args.get('hub.verify_token')
@@ -34,10 +34,12 @@ def recieve_messages():
         contacts = value['contacts'][0]
         name = contacts['profile']['name']
         text = services.get_whatsapp_message(message)
+        
         services.chat_administrator(text, number, messageId, name)
         return '..:: Sended',200
+    
     except Exception as e:
-        return '..:: Didnt sended: '+ str(e) ,403
+        return '..:: Didnt sended: '+ str(e)
 
 if __name__ == '__main__':
     app.run()

@@ -3,6 +3,7 @@ import sett
 import json
 
 def get_whatsapp_message(message):
+
     if 'type' not in message :
         text = 'mensaje no reconocido'
         return text
@@ -18,6 +19,7 @@ def get_whatsapp_message(message):
         text = message['interactive']['button_reply']['title']
     else:
         text = 'mensaje no procesado'
+    return text
 
 def send_whatsapp_message(data):
     try:
@@ -25,7 +27,6 @@ def send_whatsapp_message(data):
         whatsapp_url = sett.whatsapp_url
         headers = {'Content-Type': 'application/json',
                    'Authorization': 'Bearer ' + whatsapp_token}
-        print("se envia ", data)
         response = requests.post(whatsapp_url, 
                                  headers=headers, 
                                  data=data)
@@ -219,7 +220,7 @@ def chat_administrator(text, number, messageId, name):
     if "hola" in text:
         body = "Hola!! Te has contactado con Vertice Universal.\nTu punto de partida a multiples destinos.🌏\nPara nosotros es un placer atender tu solicitud¿Que te interesa el dia de hoy?"
         footer = "Equipo VerticeUniversal"
-        options = ["Visa Estudiante👨🏻‍🎓", "Visa Turista😎","Renovacion Visa USA🇺🇸","Extension Estadia USA🇺🇸","Reagendar Cita USA 2024🇺🇸"]
+        options = ["Visa Estudiante 👨🏻‍🎓", "Visa Turista 😎","Renovacion Visa USA 🇺🇸","Extension Estadia USA 🇺🇸","Reagendar Cita USA 2024 🇺🇸"]
         
         replyListData = listReply_Message(number, options, body, footer, "sed1", messageId)
         replyReaction = replyReaction_Message(number, messageId, "🫡")
@@ -229,7 +230,7 @@ def chat_administrator(text, number, messageId, name):
     elif "visa estudiante" in text:
         body = "Escoge tu proximo pais de destino como estudiante y conoce sus requisitos basicos"
         footer = "Equipo VerticeUniversal"
-        options = ["Estudiante USA","Estudiante CANADA","Estudiante AUSTRALIA, Estudiante MALTA"]
+        options = ["Estudiante USA","Estudiante CANADA","Estudiante AUSTRALIA","Estudiante MALTA"]
         
         replyListData = listReply_Message(number, options, body, footer, "sed1", messageId)
         list.append(replyListData)
